@@ -45,6 +45,7 @@ main {
 
     margin-left: 109px;
     margin-right: 75px;
+    margin-bottom: 153px;
 
 }
 
@@ -61,4 +62,8 @@ carta {
 
     background-color: #A7E9AF;
     border-radius: 5px;
+}
+
+.invisivel {
+    display: none;
 }
