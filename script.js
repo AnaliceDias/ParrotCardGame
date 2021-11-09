@@ -2,20 +2,20 @@ const vazio = [];
 let num_cartas;
 let conteudo_verso = [];
 let conteudos = [
-"<div class='par_1 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_1 verso carta_existente'><img src='imagens/papagaio_1.png'></div>",
-"<div class='par_1 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_1 verso carta_existente'><img src='imagens/papagaio_1.png'></div>",
-"<div class='par_2 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_2 verso carta_existente'><img src='imagens/papagaio_2.png'></div>",
-"<div class='par_2 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_2 verso carta_existente'><img src='imagens/papagaio_2.png'></div>",
-"<div class='par_3 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_3 verso carta_existente'><img src='imagens/papagaio_3.png'></div>",
-"<div class='par_3 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_3 verso carta_existente'><img src='imagens/papagaio_3.png'></div>",
-"<div class='par_4 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_4 verso carta_existente'><img src='imagens/papagaio_4.png'></div>",
-"<div class='par_4 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_4 verso carta_existente'><img src='imagens/papagaio_4.png'></div>",
-"<div class='par_5 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_5 verso carta_existente'><img src='imagens/papagaio_5.png'></div>",
-"<div class='par_5 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_5 verso carta_existente'><img src='imagens/papagaio_5.png'></div>",
-"<div class='par_6 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_6 verso carta_existente'><img src='imagens/papagaio_6.png'></div>",
-"<div class='par_6 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_6 verso carta_existente'><img src='imagens/papagaio_6.png'></div>",
-"<div class='par_7 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_7 verso carta_existente'><img src='imagens/papagaio_7.png'></div>",
-"<div class='par_7 frente carta_existente'><img src='imagens/front 1.png'></div><div class='par_7 verso carta_existente'><img src='imagens/papagaio_7.png'></div>",
+"<div class='par_1 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_1 verso carta_existente' data-identifier='front-face'><img src='imagens/papagaio_1.png'></div>",
+"<div class='par_1 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_1 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_1.png'></div>",
+"<div class='par_2 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_2 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_2.png'></div>",
+"<div class='par_2 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_2 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_2.png'></div>",
+"<div class='par_3 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_3 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_3.png'></div>",
+"<div class='par_3 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_3 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_3.png'></div>",
+"<div class='par_4 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_4 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_4.png'></div>",
+"<div class='par_4 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_4 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_4.png'></div>",
+"<div class='par_5 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_5 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_5.png'></div>",
+"<div class='par_5 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_5 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_5.png'></div>",
+"<div class='par_6 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_6 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_6.png'></div>",
+"<div class='par_6 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_6 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_6.png'></div>",
+"<div class='par_7 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_7 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_7.png'></div>",
+"<div class='par_7 frente carta_existente' data-identifier='back-face'><img src='imagens/front 1.png'></div><div class='par_7 verso carta_existente' data-identifier='front-face><img src='imagens/papagaio_7.png'></div>",
 ];
 
 
