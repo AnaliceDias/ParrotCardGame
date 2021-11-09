@@ -1,0 +1,18 @@
+Você pode jantar sushi hj ^^
+-> Sem youtube e outras redes sociais hj
+
+==============================================================================================
+#LEMBRAR DE DAR COMMIT A CADA REQUISITO CUMPRIDO
+
+estilo [2h] #tentar não extrapolar esse tempo:
+- incluir fonte [OK]
+- TAGs semânticas [OK]
+
+Java:
+um array com o html de todas as cartas
+um array que recebe só os pares solicitados [i]-> Embaralha
+um laço para mostrar as cartas separadas
+
+misturar array das classes do verso, distribuir os versos mesclados [a frente permanece igual para todos]
+
+

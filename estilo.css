@@ -6,7 +6,6 @@ body {
     justify-content: center;
     align-items: center;
 
-    position: relative;
 
     background-color: #EEF9BF;
 
@@ -41,15 +40,23 @@ header {
 main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 
-    margin-left: 109px;
-    margin-right: 75px;
-    margin-bottom: 153px;
+   margin-left: 109px;
+   margin-right: 75px;
+   margin-bottom: 153px;
+
 
 }
 
 carta {
+    margin-left: 15px;
+    margin-top: 5px;
+
+}
+
+.carta_existente{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,13 +64,30 @@ carta {
     width: 117px;
     height: 146px;
 
-    margin-right: 34px;
-    margin-top: 34px;
-
     background-color: #A7E9AF;
     border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+        
+        
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
 
-.invisivel {
-    display: none;
+.carta_existente img {
+    width:100px;
+
 }
+
+.verso {
+    transform: rotateY(180deg);
+  }
+
+  carta:hover .verso {
+    transform: rotateY(0deg);
+  }
+
+  carta:hover .frente {
+    transform: rotateY(-180deg);
+  }
+
