@@ -1,0 +1,22 @@
+@media (max-width:535px){
+    h1 {
+            
+        max-width: 302px;
+    
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        letter-spacing: -0.004em;
+    }
+}
+
+@media (max-width:380px){
+    main {
+        max-width: 117px;
+    }
+
+    div.carta {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
