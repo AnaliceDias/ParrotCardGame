@@ -1,0 +1,10 @@
+	#Fazendo: Cique na carta
+
+->limitar escolha de apenas duas cartas por vez (usar validador booleano e um contador de cliques)
+->fazer verificação de acerto (usar id nas cartas?)
+->emborcar cartas erradas/deixar cartas certas para cima (impedidas de virar)
+->verificar bugs
+
+
+dica do vini para clique da carta: retorno antecipado (da função)
+ter uma variável booleana para liberar ou bloquear as viradas das cartas (para que não virem enquanto outras cartas estiverem no processo de animação)
