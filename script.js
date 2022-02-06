@@ -64,38 +64,65 @@ let permitirJogada = true;
 let contadorDeCliquePorJogada = 0;
 let cartasClicadas = [];
 let referenciasDasCartasClicadas = [];
+let contadorDeJogadas=0;
+let contadorDeAcertos=0;
+let esperar;
 
 function comparador() { 
 	return Math.random() - 0.5; 
 }
 
-function validarPar(carta1,referenciaCarta1, carta2,referenciaCarta2){
+function esperar500mili(){
+    console.log("Esperei 500 milisegundos")
+}
+
+function esperar1000mili(){
+    console.log("Esperei 1000 milisegundos")
+}
+
+function fimDeJogo(){
+    let numeroDePares=numeroDeCartas/2;
+    if(contadorDeAcertos=== numeroDePares){
+        alert(`Você ganhou em ${contadorDeJogadas} jogadas!`);
+    }
+    else{
+        return;
+    }
     
-    if(referenciaCarta1===referenciaCarta2){
+}
+
+function validarPar(carta1,referenciaCarta1, carta2,referenciaCarta2){
+    esperar = setTimeout(esperar1000mili,1000);
+    contadorDeJogadas+=2;
+
+    if(carta1===carta2){
+        contadorDeCliquePorJogada=0;
+        permitirJogada = true;
+        return;
+    }
+    else if(referenciaCarta1===referenciaCarta2){
         carta1.classList.add("encontrouOPar");
         carta2.classList.add("encontrouOPar");
+        contadorDeAcertos++;
     }else{
         carta1.classList.remove("virada");
-        carta2.classList.remove("virada");
-        //let comando1 = setInterval(comando2, 500);
-        //setInterval(carta1.classList.remove("virada"), 500);
-        //setInterval(carta2.classList.remove("virada"), 500);
-    
-        //clearInterval(comando2);
+        carta2.classList.remove("virada");   
     } 
 
     cartasClicadas=[];
     referenciasDasCartasClicadas=[];
-}
-function comando1(){
+    contadorDeCliquePorJogada=0;
     permitirJogada = true;
-    
+    fimDeJogo();
+    clearTimeout(esperar);
 }
+
 function mostrarCarta(carta, referenciaDoPar){
+
     let classesDaCarta = carta.classList;
 
     for (let i = 0; i< classesDaCarta.length; i++){
-        if(classesDaCarta[i]==="encontrouOPar"){
+        if(classesDaCarta[i]==="encontrouOPar" || classesDaCarta[i]==="virada"){
             return;
         }
     }
@@ -111,24 +138,11 @@ function mostrarCarta(carta, referenciaDoPar){
     }else if((contadorDeCliquePorJogada===2) && (permitirJogada===true)){
         carta.classList.toggle("virada");
         permitirJogada = false;
-        contadorDeCliquePorJogada=0;
-        let comando = setInterval(comando1, 1000);
-        clearInterval(comando);
         validarPar(cartasClicadas[0], referenciasDasCartasClicadas[0], cartasClicadas[1], referenciasDasCartasClicadas[1]);
-        //setTimeout(permitirJogada = true, 1000);
-        //setTimeout(contadorDeCliquePorJogada=0, 1000);
-        
     }
     else {
         permitirJogada = false;
-        //let comando1 = setInterval(`permitirJogada = true`, 1000);
-        //let comando2 = setInterval(`contadorDeCliquePorJogada=0`, 1000);
-        let comando = setInterval(comando1, 1000);
-        clearInterval(comando);
-        //clearInterval(comando2);
-        validarPar(cartasClicadas[0], referenciasDasCartasClicadas[0], cartasClicadas[1], referenciasDasCartasClicadas[1]);
-        //setTimeout(permitirJogada = true, 1000);
-        //setTimeout(contadorDeCliquePorJogada=0, 1000);
+        validarPar(cartasClicadas[0], referenciasDasCartasClicadas[0], cartasClicadas[1], referenciasDasCartasClicadas[1]);    
     }
     
 }
@@ -156,8 +170,9 @@ function embaralharCartas(numeroDePares){
 
 function iniciarJogo (){
     numeroDeCartas =  prompt("Com quantas cartas deseja jogar? (Escolhar um número par entre 4 e 14)");
+    numeroDeCartas = parseInt(numeroDeCartas);
 
-    if (((parseInt(numeroDeCartas)%2)===0) && (parseInt(numeroDeCartas) >= 4) && (parseInt(numeroDeCartas)<=14)){
+    if (((numeroDeCartas%2)===0) && (numeroDeCartas >= 4) && (numeroDeCartas<=14)){
         console.log("Número de cartas = "+ numeroDeCartas);
         numeroDeCartas =  parseInt(numeroDeCartas);
         embaralharCartas((numeroDeCartas/2));

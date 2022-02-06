@@ -1,17 +1,15 @@
 	#Fazendo: Cique na carta
 
-->limitar escolha de apenas duas cartas por vez (usar validador booleano e um contador de cliques)
+[OK] limitar escolha de apenas duas cartas por vez (usar validador booleano e um contador de cliques)
 [OK] fazer verificação de acerto
 [OK] emborcar cartas erradas/deixar cartas certas para cima (impedidas de virar)
+esconder par de cartas não correspondentes
 ->verificar bugs
 
 
-dica do vini para clique da carta: retorno antecipado (da função)
-ter uma variável booleana para liberar ou bloquear as viradas das cartas (para que não virem enquanto outras cartas estiverem no processo de animação)
+	#Problema atual:
+tempo de virada das cartas (esperar um segundo para virar par errado)
 
 
-
-Problema atual:
--setInterval (inserir funções que recebem parâmetros, como parâmetro no setInterval)
-
-[OK] como impedir o jogador de clicar nas cartas já acertadas
+	#Infos para o formulário:
+-Principal dificuldade: usar as fuções de tempo
