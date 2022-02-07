@@ -66,18 +66,9 @@ let cartasClicadas = [];
 let referenciasDasCartasClicadas = [];
 let contadorDeJogadas=0;
 let contadorDeAcertos=0;
-let esperar;
 
 function comparador() { 
 	return Math.random() - 0.5; 
-}
-
-function esperar500mili(){
-    console.log("Esperei 500 milisegundos")
-}
-
-function esperar1000mili(){
-    console.log("Esperei 1000 milisegundos")
 }
 
 function fimDeJogo(){
@@ -92,7 +83,6 @@ function fimDeJogo(){
 }
 
 function validarPar(carta1,referenciaCarta1, carta2,referenciaCarta2){
-    esperar = setTimeout(esperar1000mili,1000);
     contadorDeJogadas+=2;
 
     if(carta1===carta2){
@@ -138,13 +128,9 @@ function mostrarCarta(carta, referenciaDoPar){
     }else if((contadorDeCliquePorJogada===2) && (permitirJogada===true)){
         carta.classList.toggle("virada");
         permitirJogada = false;
-        esperar = setTimeout(esperar1000mili,1000);
-        validarPar(cartasClicadas[0], referenciasDasCartasClicadas[0], cartasClicadas[1], referenciasDasCartasClicadas[1]);
-        clearTimeout(esperar);
-    }
-    else {
-        permitirJogada = false;
-        validarPar(cartasClicadas[0], referenciasDasCartasClicadas[0], cartasClicadas[1], referenciasDasCartasClicadas[1]);    
+        setTimeout(()=>{
+            validarPar(cartasClicadas[0], referenciasDasCartasClicadas[0], cartasClicadas[1], referenciasDasCartasClicadas[1]);
+        } , 1000)        
     }
     
 }
