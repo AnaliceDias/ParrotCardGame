@@ -114,7 +114,7 @@ function validarPar(carta1,referenciaCarta1, carta2,referenciaCarta2){
     contadorDeCliquePorJogada=0;
     permitirJogada = true;
     fimDeJogo();
-    clearTimeout(esperar);
+    
 }
 
 function mostrarCarta(carta, referenciaDoPar){
@@ -138,7 +138,9 @@ function mostrarCarta(carta, referenciaDoPar){
     }else if((contadorDeCliquePorJogada===2) && (permitirJogada===true)){
         carta.classList.toggle("virada");
         permitirJogada = false;
+        esperar = setTimeout(esperar1000mili,1000);
         validarPar(cartasClicadas[0], referenciasDasCartasClicadas[0], cartasClicadas[1], referenciasDasCartasClicadas[1]);
+        clearTimeout(esperar);
     }
     else {
         permitirJogada = false;
