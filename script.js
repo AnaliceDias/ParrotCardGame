@@ -73,6 +73,7 @@ function comparador() {
 
 function fimDeJogo(){
     let numeroDePares=numeroDeCartas/2;
+    
     if(contadorDeAcertos=== numeroDePares){
         alert(`Você ganhou em ${contadorDeJogadas} jogadas!`);
     }
@@ -108,7 +109,6 @@ function validarPar(carta1,referenciaCarta1, carta2,referenciaCarta2){
 }
 
 function mostrarCarta(carta, referenciaDoPar){
-
     let classesDaCarta = carta.classList;
 
     for (let i = 0; i< classesDaCarta.length; i++){
@@ -137,13 +137,14 @@ function mostrarCarta(carta, referenciaDoPar){
     
 function adicionarCartasATela(cartasUsadas){
     let main = document.querySelector("main");
+
     for(let i = 0; i< cartasUsadas.length; i++){
         main.innerHTML=main.innerHTML + cartasUsadas[i];
     }
 }
 
 function embaralharCartas(numeroDePares){
-    
+
     for (let i =0; i<numeroDePares; i++){
         cartasUsadas[i]=cartasDoJogo[i];
     }
