@@ -75,7 +75,8 @@ function fimDeJogo(){
     let numeroDePares=numeroDeCartas/2;
     
     if(contadorDeAcertos=== numeroDePares){
-        alert(`Você ganhou em ${contadorDeJogadas} jogadas!`);
+        let r = alert(`Você ganhou em ${contadorDeJogadas} jogadas!`);
+        location.reload();
     }
     else{
         return;
@@ -84,7 +85,7 @@ function fimDeJogo(){
 }
 
 function validarPar(carta1,referenciaCarta1, carta2,referenciaCarta2){
-    contadorDeJogadas+=2;
+    contadorDeJogadas++;
 
     if(carta1===carta2){
         contadorDeCliquePorJogada=0;
@@ -120,7 +121,6 @@ function mostrarCarta(carta, referenciaDoPar){
     cartasClicadas.push(carta);
     referenciasDasCartasClicadas.push(referenciaDoPar);
     contadorDeCliquePorJogada++;
-    console.log("contador = "+contadorDeCliquePorJogada)
     
     if ((contadorDeCliquePorJogada<2) && (permitirJogada===true)){
         carta.classList.toggle("virada");
@@ -146,6 +146,7 @@ function adicionarCartasATela(cartasUsadas){
 function embaralharCartas(numeroDePares){
 
     for (let i =0; i<numeroDePares; i++){
+        cartasDoJogo.sort(comparador);
         cartasUsadas[i]=cartasDoJogo[i];
     }
 
@@ -162,7 +163,6 @@ function iniciarJogo (){
     numeroDeCartas = parseInt(numeroDeCartas);
 
     if (((numeroDeCartas%2)===0) && (numeroDeCartas >= 4) && (numeroDeCartas<=14)){
-        console.log("Número de cartas = "+ numeroDeCartas);
         numeroDeCartas =  parseInt(numeroDeCartas);
         embaralharCartas((numeroDeCartas/2));
         return;
@@ -171,8 +171,6 @@ function iniciarJogo (){
         iniciarJogo();
     }     
 }
-
-//===========X Funções executadas na inicialização do programa X===========
 
 iniciarJogo();
 
