@@ -1,62 +1,26 @@
-const cartasDoJogo = [
-    `<div class="carta" onclick="mostrarCarta(this, 1)" data-identifier="card" >
-    <div class="frente face" data-identifier="back-face">
-        <img src="imagens/front.png">
-    </div>
-    <div class="verso face" data-identifier="front-face">
-        <img src="imagens/metalparrot.gif">
-    </div>
-    </div> `,
-    `<div class="carta" onclick="mostrarCarta(this, 2)" data-identifier="card" >
-    <div class="frente face" data-identifier="back-face">
-        <img src="imagens/front.png">
-    </div>
-    <div class="verso face" data-identifier="front-face">
-        <img src="imagens/bobrossparrot.gif">
-    </div>
-    </div> `,
-    `<div class="carta" onclick="mostrarCarta(this, 3)" data-identifier="card" >
-    <div class="frente face" data-identifier="back-face">
-        <img src="imagens/front.png">
-    </div>
-    <div class="verso face" data-identifier="front-face">
-        <img src="imagens/explodyparrot.gif">
-    </div>
-    </div> `,
-    `<div class="carta" onclick="mostrarCarta(this, 4)" data-identifier="card" >
-    <div class="frente face" data-identifier="back-face">
-        <img src="imagens/front.png">
-    </div>
-    <div class="verso face" data-identifier="front-face">
-        <img src="imagens/fiestaparrot.gif">
-    </div>
-    </div> `,
-    `<div class="carta" onclick="mostrarCarta(this, 5)" data-identifier="card" >
-    <div class="frente face" data-identifier="back-face">
-        <img src="imagens/front.png">
-    </div>
-    <div class="verso face" data-identifier="front-face">
-        <img src="imagens/revertitparrot.gif">
-    </div>
-    </div> `,
-    `<div class="carta" onclick="mostrarCarta(this, 6)" data-identifier="card" >
-    <div class="frente face" data-identifier="back-face">
-        <img src="imagens/front.png">
-    </div>
-    <div class="verso face" data-identifier="front-face">
-        <img src="imagens/tripletsparrot.gif">
-    </div>
-    </div> `,
-    `<div class="carta" onclick="mostrarCarta(this, 7)" data-identifier="card" >
-    <div class="frente face" data-identifier="back-face">
-        <img src="imagens/front.png">
-    </div>
-    <div class="verso face" data-identifier="front-face">
-        <img src="imagens/unicornparrot.gif">
-    </div>
-    </div> `
-
+const figurinhas = [
+    "src/figurinhas/metalparrot.gif",
+    "src/figurinhas/bobrossparrot.gif",
+    "src/figurinhas/explodyparrot.gif",
+    "src/figurinhas/fiestaparrot.gif",
+    "src/figurinhas/revertitparrot.gif",
+    "src/figurinhas/tripletsparrot.gif",
+    "src/figurinhas/unicornparrot.gif",
 ];
+const verso = "src/verso.png"
+const cartasDoJogo = [];
+for (i =0 ; i < figurinhas.length; i++) {
+    console.log(figurinhas[i])
+    cartasDoJogo.push(
+        `<div class="carta" onclick="mostrarCarta(this, ${i})" data-identifier="card" >
+    <div class="frente face" data-identifier="back-face">
+        <img src=${verso}>
+    </div>
+    <div class="verso face" data-identifier="front-face">
+        <img src=${figurinhas[i]}>
+    </div>
+    </div> `)
+}
 
 let cartasUsadas = [];
 let numeroDeCartas = 0;
@@ -144,9 +108,9 @@ function adicionarCartasATela(cartasUsadas){
 }
 
 function embaralharCartas(numeroDePares){
-
+    cartasDoJogo.sort(comparador);
+    
     for (let i =0; i<numeroDePares; i++){
-        cartasDoJogo.sort(comparador);
         cartasUsadas[i]=cartasDoJogo[i];
     }
 
